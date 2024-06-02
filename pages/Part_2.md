@@ -8,7 +8,7 @@ tell us
 ## Understanding latency
 Multiplayer games operating over the internet have to manage adverse network factors that don't affect single-player or LAN-only multiplayer games, most notably network latency. Latency (also known as lag) is the delay between a user taking an action and seeing the expected result. When latency is too high, a game feels unresponsive and slow.
 
-*Here you can see how your ping (delay in ms) is measured* <br>
+*Here you can see how your ping (delay in ms) is measured.* <br>
 ![testimage](images/ping-animation-dark.gif?raw=true)
 
 Generally, 200ms of latency is the point at which users notice gameplay degradation, although different types of games can tolerate more or less latency. For example, first-person shooter games perform best with less than 100ms of latency, whereas real-time strategy games can tolerate higher latency values of up to 500ms before gameplay is meaningfully impacted.
@@ -41,8 +41,7 @@ When handling an online action for example shooting a bullet, the safest and mos
 - 2 Server checks if the client has a bullet in his magazine, if so. Tell the client he may shoot.
 - 3 The client shoots and all others clients see him shooting a bullet. 
 <br> <br>
-This way of handling it is also known as **Server Authorative**
-<br>
+*Visual example of a **Server Authorative** messaging system.* <br> <br>
 ![ServerAuthorative](images/server_authorative.png?raw=true)
 <br>
 However the problem here is that the delay between when the client presses shoot and the actual shot is dependend on the network latency (ping in ms) of the client. When it's 25ms it's unnoticeable but as you have 100ms or higher, the game will perform all your actions delayed causing the feedback from all actions to feel weird and not satisfying.
