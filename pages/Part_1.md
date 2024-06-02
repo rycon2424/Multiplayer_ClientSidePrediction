@@ -1,4 +1,4 @@
-# Client-prediction and server reconcilation
+# Client-prediction and Server reconcilation
 
 **What is this tutorial about?** <br>
 tell us
