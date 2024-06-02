@@ -14,6 +14,8 @@ Multiplayer games operating over the internet have to manage adverse network fac
 Generally, 200ms of latency is the point at which users notice gameplay degradation, although different types of games can tolerate more or less latency. For example, first-person shooter games perform best with less than 100ms of latency, whereas real-time strategy games can tolerate higher latency values of up to 500ms before gameplay is meaningfully impacted.
 
 High ping (ms) can cause actions/events and even movement to be processed way later, causing a big desync and making some games unplayable.
+Using my tool (https://boskodeveloper.github.io) we can simulate lag by setting the player 1 lag to 100+ ms. 
+When you move with the arrow keys you will notice that it takes a second before the player actually moves after the input.
 
 ![testimage](images/lag_meme.gif?raw=true)
 
