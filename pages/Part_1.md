@@ -18,6 +18,9 @@ tell us
 - https://boskodeveloper.github.io <br>
 (note: this link will be shown everytime I use it for reference)
 
+**Contact**  <br>
+For any questions feel free to mail at: boskoivkovic.developer@gmail.com
+
 ![testimage](images/test_image.png?raw=true)
 
 ## Introduction
