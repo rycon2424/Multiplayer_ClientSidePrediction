@@ -7,6 +7,10 @@ tell us
 
 ## Check if (movement) value has changed before sending
 tell us
+
+## More Tips? <br>
+Feel free to e-mail me at: boskoivkovic.developer@gmail.com
+
 <br> <br>
 # All parts
 [Part 1: Tutorial Intro](Part_1.md)  <br>
