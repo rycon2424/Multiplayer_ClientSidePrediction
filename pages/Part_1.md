@@ -11,6 +11,7 @@ tell us
 **Knowledge expected from you**
 - Knowledge of the Unity Engine and C#
 - Knowing the basics of networking (Rpcs, packages, multiplayer)
+- Using networking solutions or similar to "Netcode for Gameobjects", "Mirror"
 - Being able to write code in a code editor (IDE)
 
 **Small example that will be used and referenced to when talking about prediction and Reconciliation**
@@ -38,4 +39,4 @@ tell us - delayed
 [Tutorial Intro](pages/Part_1.md)  <br>
 [Understanding the problem](pages/Part_2.md)  <br>
 [Resolving the problem](pages/Part_3.md)  <br>
-[To get started click here!](pages/Part_4.md)
+[Tips and Optimization](pages/Part_4.md)
