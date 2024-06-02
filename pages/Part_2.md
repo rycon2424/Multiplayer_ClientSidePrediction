@@ -50,8 +50,10 @@ However the problem here is that the delay between when the client presses shoot
 
 ### Client authoritive
 This version of messaging is never used since it can cause the client to send whatever he wants to other clients without there being someone to overlook if the client was allowed to do that action.
+This makes cheating very easy. Imagine if you can just send "Im shooting" to everyone and no one checking if it was actually possible. That is very exploitative.
 
 *Visual example of a **Client Authorative** messaging system.*
+![ServerAuthorative](images/client_authorative.png?raw=true)
 
 ## Client-side prediction and Server reconciliation explained
 ### Client-side prediction
