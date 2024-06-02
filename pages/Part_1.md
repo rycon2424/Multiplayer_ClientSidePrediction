@@ -35,7 +35,7 @@ tell us
 ### Server reconcilation
 tell us
 
-## How it looks like without any Client-prediction
+## How it looks like without any Client-prediction and Server reconcilation
 tell us - delayed
 <br> <br>
 # All parts
