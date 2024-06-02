@@ -21,8 +21,6 @@ tell us
 **Contact**  <br>
 For any questions feel free to mail at: boskoivkovic.developer@gmail.com
 
-![testimage](images/test_image.png?raw=true)
-
 ## Introduction
 tell us
 
@@ -38,6 +36,9 @@ When handling an online action for example shooting a bullet, the safest and mos
 This way of handling it is also known as **Server Authorative**
 
 ![ServerAuthorative](images/server_authorative.png?raw=true)
+
+<br>
+However the problem here is that the delay between when the client presses shoot and the actual shot is dependend on the network latency (ping in ms) of the client. When it's 25ms it's unnoticeable but as you have 100ms or higher, the game will perform all your actions delayed causing the feedback from all actions to feel weird and not satisfying.
 
 ### Client-prediction
 When client-prediction is implemented and a player performs an action (for example; moving their character, shooting a weapon), the input is immediately processed by the client. This means the client updates the game state locally based on the player's input without waiting for the server's response.
