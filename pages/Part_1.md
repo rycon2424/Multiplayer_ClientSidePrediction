@@ -36,8 +36,8 @@ When handling an online action for example shooting a bullet, the safest and mos
 - 3 The client shoots and all others clients see him shooting a bullet. 
 <br> <br>
 This way of handling it is also known as **Server Authorative**
-<br>
 
+![ServerAuthorative](images/server_authorative.png?raw=true)
 
 ### Client-prediction
 When a player performs an action (e.g., moving their character, shooting a weapon), the input is immediately processed by the client. This means the client updates the game state locally based on the player's input without waiting for the server's response.
