@@ -40,11 +40,14 @@ This way of handling it is also known as **Server Authorative**
 <br>
 However the problem here is that the delay between when the client presses shoot and the actual shot is dependend on the network latency (ping in ms) of the client. When it's 25ms it's unnoticeable but as you have 100ms or higher, the game will perform all your actions delayed causing the feedback from all actions to feel weird and not satisfying.
 
-### Client-prediction
-When client-prediction is implemented and a player performs an action (for example; moving their character, shooting a weapon), the input is immediately processed by the client. This means the client updates the game state locally based on the player's input without waiting for the server's response.
+### Client-side prediction
+When client-side prediction is implemented and a player performs an action (for example; moving their character, shooting a weapon), the input is immediately processed by the client. This means the client updates the game state locally based on the player's input without waiting for the server's response.
 
 ### Server reconciliation
 tell us
+
+*How the messaging looks like when there is Client-side prediction and server reconciliation implemented*
+![ServerReconciliation](images/server_reconciliation.png?raw=true)
 
 ## How it looks like without any Client-prediction and Server reconciliation
 tell us - delayed
