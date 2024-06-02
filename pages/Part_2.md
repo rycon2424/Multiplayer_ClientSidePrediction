@@ -61,6 +61,9 @@ Server reconciliation is on a very simple level checking if a client was allowed
 *How the messaging looks like when there is Client-side prediction and server reconciliation implemented*
 ![ServerReconciliation](images/server_reconciliation.png?raw=true)
 
+# Next Part: Resolving the problem
+[Part 3: Resolving the problem](Part_3.md)  <br>
+
 <br> <br>
 # All parts
 [Part 1: Tutorial Intro](Part_1.md)  <br>
