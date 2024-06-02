@@ -1,2 +1,2 @@
-# Client-prediction and server reconcilation
+# Client-prediction and Server reconcilation
 
