@@ -35,7 +35,7 @@ tell us
 tell us - delayed
 
 # All parts
-[Tutorial Intro](pages/Part_1.md)
-[To get started click here!](pages/Part_2.md)
-[To get started click here!](pages/Part_3.md)
+[Tutorial Intro](pages/Part_1.md)  <br>
+[To get started click here!](pages/Part_2.md)  <br>
+[To get started click here!](pages/Part_3.md)  <br>
 [To get started click here!](pages/Part_4.md)
