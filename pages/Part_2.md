@@ -2,7 +2,7 @@
 
 # Understanding the problem.
 
-## What is Part 2 about?
+## Why is understanding the problem important?
 tell us
 
 ## Understanding latency
