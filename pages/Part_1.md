@@ -8,6 +8,8 @@ tell us
 **For who is it usefull?** <br>
 tell us
 
+// insert lag gif
+
 **Knowledge expected from you**
 - Knowledge of the Unity Engine and C#
 - Knowing the basics of networking (Rpcs, packages, multiplayer)
@@ -32,6 +34,7 @@ tell us, in a simple way since it will be better explained in part 2
 
 ## How it looks like without any Client-prediction and Server reconciliation
 tell us - delayed
+// show my own project delay
 
 # Next Part: Understanding the problem
 [Part 2: Understanding the problem](Part_2.md)  <br>
