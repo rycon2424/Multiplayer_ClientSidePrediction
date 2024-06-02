@@ -34,17 +34,20 @@ Update rate is a measure of how frequently the client sends and receives data to
 *If the update rate of a client is lower than the tick rate of the server, then the client won't see the benefit of the high tick rate, because it will only receive updates at the client update rate, even if multiple ticks have been processed in the interim.*
 
 ## Server authoritive vs Client authoritive
+
+### Server authoritive 
 When handling an online action for example shooting a bullet, the safest and most anti cheat way of doing it would look like this:
 - 1 Client asks the server if he can shoot a bullet
 - 2 Server checks if the client has a bullet in his magazine, if so. Tell the client he may shoot.
 - 3 The client shoots and all others clients see him shooting a bullet. 
 <br> <br>
 This way of handling it is also known as **Server Authorative**
-
+<br>
 ![ServerAuthorative](images/server_authorative.png?raw=true)
-
 <br>
 However the problem here is that the delay between when the client presses shoot and the actual shot is dependend on the network latency (ping in ms) of the client. When it's 25ms it's unnoticeable but as you have 100ms or higher, the game will perform all your actions delayed causing the feedback from all actions to feel weird and not satisfying.
+
+### Client authoritive
 
 ## Client-side prediction and Server reconciliation explained
 ### Client-side prediction
