@@ -34,7 +34,28 @@ Update rate is a measure of how frequently the client sends and receives data to
 *If the update rate of a client is lower than the tick rate of the server, then the client won't see the benefit of the high tick rate, because it will only receive updates at the client update rate, even if multiple ticks have been processed in the interim.*
 
 ## Server authoritive vs Client authoritive
-tell us
+When handling an online action for example shooting a bullet, the safest and most anti cheat way of doing it would look like this:
+- 1 Client asks the server if he can shoot a bullet
+- 2 Server checks if the client has a bullet in his magazine, if so. Tell the client he may shoot.
+- 3 The client shoots and all others clients see him shooting a bullet. 
+<br> <br>
+This way of handling it is also known as **Server Authorative**
+
+![ServerAuthorative](images/server_authorative.png?raw=true)
+
+<br>
+However the problem here is that the delay between when the client presses shoot and the actual shot is dependend on the network latency (ping in ms) of the client. When it's 25ms it's unnoticeable but as you have 100ms or higher, the game will perform all your actions delayed causing the feedback from all actions to feel weird and not satisfying.
+
+## Client-side prediction and Server reconciliation explained
+### Client-side prediction
+When client-side prediction is implemented and a player performs an action (for example; moving their character, shooting a weapon), the input is immediately processed by the client. This means the client updates the game state locally based on the player's input without waiting for the server's response.
+
+### Server reconciliation
+Server reconciliation is on a very simple level checking if a client was allowed to ever perform an action. If yes then the server sends the client an approval check. But if the server got an action requested that was not possible for the client (for example; shooting a bullet while the magazine is empty, or moving while the clients character was blocked). Then the server will reconciliate that action, for the shooting example one way to reconciliate it is by making the bullet not do damage (since it was never supposed to spawn in the first place). For the movement the reconciliation would be to teleport the client back to his last position were he was allowed to be from the server.
+
+*How the messaging looks like when there is Client-side prediction and server reconciliation implemented*
+![ServerReconciliation](images/server_reconciliation.png?raw=true)
+
 <br> <br>
 # All parts
 [Part 1: Tutorial Intro](Part_1.md)  <br>
