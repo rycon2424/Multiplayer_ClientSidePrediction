@@ -25,7 +25,7 @@ For any questions feel free to mail at: boskoivkovic.developer@gmail.com
 tell us
 
 ## Who am I?
-tell us
+tell us, what my problem is and why i chose this solution
 
 ## What is Client-prediction and server reconciliation?
 When handling an online action for example shooting a bullet, the safest and most anti cheat way of doing it would look like this:
