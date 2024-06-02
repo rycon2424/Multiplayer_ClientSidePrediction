@@ -1,4 +1,4 @@
-## Client-prediction and Server reconcilation
+## *Client-prediction and Server reconciliation*
 
 # Tips and Optimization
 
