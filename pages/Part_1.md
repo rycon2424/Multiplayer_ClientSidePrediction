@@ -40,7 +40,7 @@ This way of handling it is also known as **Server Authorative**
 ![ServerAuthorative](images/server_authorative.png?raw=true)
 
 ### Client-prediction
-When a player performs an action (e.g., moving their character, shooting a weapon), the input is immediately processed by the client. This means the client updates the game state locally based on the player's input without waiting for the server's response.
+When client-prediction is implemented and a player performs an action (for example; moving their character, shooting a weapon), the input is immediately processed by the client. This means the client updates the game state locally based on the player's input without waiting for the server's response.
 
 ### Server reconciliation
 tell us
