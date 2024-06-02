@@ -1,9 +1,9 @@
 # Client-prediction and server reconcilation
 
-**What is this tutorial about?** 
+**What is this tutorial about?** <br>
 tell us
 
-**For who is it usefull?**
+**For who is it usefull?** <br>
 tell us
 
 **Knowledge expected from you**
@@ -12,8 +12,7 @@ tell us
 - Being able to write code in a code editor (IDE)
 
 **Small example that will be used and referenced to when talking about prediction and Reconciliation**
-- https://boskodeveloper.github.io
-
+- https://boskodeveloper.github.io <br>
 (note: this link will be shown everytime I use it for reference)
 
 ![testimage](images/test_image.png?raw=true)
