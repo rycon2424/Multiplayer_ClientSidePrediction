@@ -8,6 +8,9 @@ tell us
 ## Check if (movement) value has changed before sending
 tell us
 
+## Unity's client anticipation support (Netcode for Gameobject **only**)
+tell us
+
 ## More Tips? <br>
 Feel free to e-mail me at: boskoivkovic.developer@gmail.com
 
