@@ -8,11 +8,14 @@ tell us
 ## Understanding latency
 tell us
 
+![testimage](images/ping-animation-dark.gif?raw=true)
+
 ## Tick and update rates
 In addition to the effects of latency, gameplay experience in a multiplayer game is also affected by the server's tick rate and the client's update rate. Low tick and update rates reduce game responsiveness and add to perceived latency for users.
 
 For example on the default settings using my tool: https://boskodeveloper.github.io/
 You can see that changing the servers "Updates per second" increases the smoothness significantly.
+![testimage](images/tick_update_rate.gif?raw=true)
 
 
 ### Tick rate
