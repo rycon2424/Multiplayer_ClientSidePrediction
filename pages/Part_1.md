@@ -1,6 +1,6 @@
 ## *Client-prediction and Server reconciliation*
 
-# Tutorial Intro to Client-prediction and Server reconciliation
+# Intro to Client-prediction and Server reconciliation Tutorial
 
 **What is this tutorial about?** <br>
 tell us
