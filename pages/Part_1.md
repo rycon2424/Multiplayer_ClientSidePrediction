@@ -30,8 +30,18 @@ tell us
 tell us
 
 ## What is Client-prediction and server reconciliation?
+When handling an online action for example shooting a bullet, the safest and most anti cheat way of doing it would look like this:
+- 1 Client asks the server if he can shoot a bullet
+- 2 Server checks if the client has a bullet in his magazine, if so. Tell the client he may shoot.
+- 3 The client shoots and all others clients see him shooting a bullet. 
+<br> <br>
+This way of handling it is also known as **Server Authorative**
+<br>
+
+
 ### Client-prediction
-tell us
+When a player performs an action (e.g., moving their character, shooting a weapon), the input is immediately processed by the client. This means the client updates the game state locally based on the player's input without waiting for the server's response.
+
 ### Server reconciliation
 tell us
 
