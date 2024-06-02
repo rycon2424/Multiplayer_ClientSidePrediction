@@ -2,4 +2,4 @@
 
 # Clientside prediction and Server Reconcilation
 
-To get started click here!
+[To get started click here!](part2.md)
