@@ -36,6 +36,6 @@ tell us - delayed
 
 # All parts
 [Tutorial Intro](pages/Part_1.md)  <br>
-[To get started click here!](pages/Part_2.md)  <br>
+[Understanding the problem](pages/Part_2.md)  <br>
 [To get started click here!](pages/Part_3.md)  <br>
 [To get started click here!](pages/Part_4.md)
