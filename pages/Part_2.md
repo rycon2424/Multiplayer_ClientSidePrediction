@@ -8,9 +8,12 @@ tell us
 ## Understanding latency
 Multiplayer games operating over the internet have to manage adverse network factors that don't affect single-player or LAN-only multiplayer games, most notably network latency. Latency (also known as lag) is the delay between a user taking an action and seeing the expected result. When latency is too high, a game feels unresponsive and slow.
 
+*Here you can see how your ping (delay in ms) is measured*
+![testimage](images/ping-animation-dark.gif?raw=true)
+
 Generally, 200ms of latency is the point at which users notice gameplay degradation, although different types of games can tolerate more or less latency. For example, first-person shooter games perform best with less than 100ms of latency, whereas real-time strategy games can tolerate higher latency values of up to 500ms before gameplay is meaningfully impacted.
 
-![testimage](images/ping-animation-dark.gif?raw=true)
+![testimage](images/lag_meme.gif?raw=true)
 
 ## Tick and update rates
 In addition to the effects of latency, gameplay experience in a multiplayer game is also affected by the server's tick rate and the client's update rate. Low tick and update rates reduce game responsiveness and add to perceived latency for users.
