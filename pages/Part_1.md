@@ -1,5 +1,5 @@
 # Multiplayer_ClientSidePrediction
 
-[Example of lag and prediction](lag_example/lag_example.html)
+https://boskodeveloper.github.io/
 
 ![testimage](images/test_image.png?raw=true)
