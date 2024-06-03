@@ -65,10 +65,6 @@ Here is an example of how it looks like in my own project. As you can see the pl
 *As you can see the "player 2" moves the blue circle which is "player 1" a bit delayed* <br>
 ![MyProblem](images/my_problem_tool.gif?raw=true)
 
-tell us - delayed
-// show the tools delay
-// show my own project delay
-
 # Next Part: Understanding the problem
 [Part 2: Understanding the problem](Part_2.md)  <br>
 
