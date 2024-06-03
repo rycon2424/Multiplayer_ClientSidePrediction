@@ -26,7 +26,16 @@ For anyone making developing a multiplayer game were precision of (for example) 
 For any questions feel free to mail at: boskoivkovic.developer@gmail.com
 
 ## Introduction
-tell us
+Welcome to my tutorial on client-side prediction and server reconciliation, key techniques that make online multiplayer games smooth and responsive.
+
+### What You'll Learn
+- Client-Side Prediction: Learn how your game instantly reflects your actions, like moving a character or firing a weapon, without waiting for server confirmation. This keeps gameplay fluid and responsive.
+ - Server Reconciliation: Understand how the game server ensures fairness and consistency by validating and correcting the actions predicted by the client, maintaining a synchronized experience for all players.
+
+### Why These Concepts Matter
+Client-side prediction and server reconciliation are crucial for responsive and fair online gaming. Without them, games would feel laggy and inconsistent.
+
+By the end of this tutorial, you'll understand how these systems work together to create seamless gameplay. 
 
 ## Who am I?
 tell us, what my problem is and why i chose this solution
