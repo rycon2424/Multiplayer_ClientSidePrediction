@@ -46,7 +46,7 @@ When handling an online action for example shooting a bullet, the safest and mos
 *Visual example of a **Server Authorative** messaging system.* <br> <br>
 ![ServerAuthorative](images/server_authorative.png?raw=true)
 <br>
-However the problem here is that the delay between when the client presses shoot and the actual shot is dependend on the network latency (ping in ms) of the client. When it's 25ms it's unnoticeable but as you have 100ms or higher, the game will perform all your actions delayed causing the feedback from all actions to feel weird and not satisfying.
+However the problem here is that the delay between when the client presses shoot and the actual shot is dependend on the network latency (ping in ms) of the client. When it is 25ms it's unnoticeable, but when you have 100ms or higher, the game will perform all your actions delayed causing the feedback from all actions to feel weird and not satisfying.
 
 ### Client authoritive
 This version of messaging is never used since it can cause the client to send whatever he wants to other clients without there being someone to overlook if the client was allowed to do that action.
