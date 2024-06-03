@@ -6,7 +6,7 @@
 tell us
 
 **For who is it usefull?** <br>
-tell us
+For anyone making developing a multiplayer game were precision of (for example) the players position needs to be consistend. This is architecture is mostly used in fast-paced multiplayer games. (First person shooters, online parkour games, etc)
 
 // insert lag gif
 
