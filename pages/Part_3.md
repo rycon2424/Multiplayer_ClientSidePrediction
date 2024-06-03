@@ -5,11 +5,12 @@
 ## Applying client-side prediction using x
 tell us
 
+## Applying server side reconciliation using x
+tell us
+
 # Next Part: Tips and Optimization
 [Part 4: Tips and Optimization](Part_4.md)  <br>
 
-## Applying server side reconciliation using x
-tell us
 <br> <br>
 # All parts
 [Part 1: Tutorial Intro](Part_1.md)  <br>
