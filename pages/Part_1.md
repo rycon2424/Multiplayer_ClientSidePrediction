@@ -39,9 +39,9 @@ By the end of this tutorial, you'll understand how these systems work together t
 
 ## Who am I?
 I am Bosko Ivkovic, a game developer who is very interested in multiplayer/netcode functionality. I have dedicated myself the last 6 years working with different multiplayer solutions (Photon Pun, MLAPI, Netcode for Gameobjects, Mirror, Facepunch). Whenever I made a fast paced multiplayer game I always noticed how half a second delay could impact the whole balancing and fairness of the game. I also noticed that all these Networking solutions never have implemented a thing such as Client-side prediction. Probably because they are expecting different kinds of games to be made with them and thus do not have it high in their priority list.
-<br>
+<br> <br>
 Currently, I am working on a game where the problem has risen again. I have stuff like opening chests, talking to npc's and triggering the game start, all based on when a player is at X location and pressing a button. Now imagine if a player presses a button as soon as he enters the trigger. Locally nothing would be wrong since he is inside the trigger. But for the other players where he is standing were he was half a second ago, this causes the other players to not receive the input of the player at the right location.
-<br>
+<br> <br>
 I am definitely not the only game developer with this problem. That is why I have decided to make this tutorial.
 
 
