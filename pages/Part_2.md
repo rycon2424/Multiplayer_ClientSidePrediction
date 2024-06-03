@@ -33,7 +33,7 @@ Tick rate, also known as the simulation rate, is a measure of how frequently the
 ### Update rate
 Update rate is a measure of how frequently the client sends and receives data to and from the server. It's also measured in hertz and, like tick rate, a higher update rate results in a more responsive game at the cost of increased processing and network demands on the client and server.
 <br> <br>
-*If the update rate of a client is lower than the tick rate of the server, then the client won't see the benefit of the high tick rate, because it will only receive updates at the client update rate, even if multiple ticks have been processed in the interim.*
+*If the update rate of a client is lower than the tick rate of the server, then the client won't see the benefit of the high tick rate, because it will only receive updates at the client update rate, even if multiple ticks have been processed in the meantime.*
 
 ## Server authoritive vs Client authoritive
 
