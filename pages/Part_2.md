@@ -3,7 +3,18 @@
 # Understanding the problem.
 
 ## Why is understanding the problem important?
-tell us
+Understanding client-prediction and server reconciliation is crucial in multiplayer game development for several reasons:
+
+### Improved Player Experience
+- **Reduced Latency:** Client-prediction provides immediate responses to inputs, reducing perceived lag and making the game feel more responsive.
+- **Smooth Gameplay:** Server reconciliation corrects discrepancies between client predictions and server-confirmed states, ensuring consistent gameplay.
+
+### Consistency and Fairness
+- **Accurate State Synchronization:** Ensures all players have a consistent view of the game world, maintaining fair gameplay.
+- **Error Correction:** Addresses network issues by making the server the authoritative source, correcting client prediction errors smoothly.
+
+### Cheat Prevention
+- **Server Authority:** Keeps the server as the authoritative entity, preventing client-side manipulation and cheating.
 
 ## Understanding latency
 Multiplayer games operating over the internet have to manage adverse network factors that don't affect single-player or LAN-only multiplayer games, most notably network latency. Latency (also known as lag) is the delay between a user taking an action and seeing the expected result. When latency is too high, a game feels unresponsive and slow.
