@@ -10,6 +10,9 @@ Using this package from unity makes developing multiplayer in general way easier
 ## Don't spam Rpcs in the update loop
 tell us
 
+## Optimize the Rpc's by caching
+The server can also cache the "lastMovementData" of the clients instead of the clients sending it themselves. This setup would also make it even more anti cheat.
+
 ## Check if (movement) value has changed before sending
 tell us
 
