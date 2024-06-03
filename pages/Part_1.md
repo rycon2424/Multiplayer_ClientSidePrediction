@@ -61,7 +61,7 @@ Server reconciliation ensures that everyone in the game world sees the same thin
 Here is an example of how it looks like in my own project. As you can see the player moves on (25-50ms ping) **a whole second** later for the other player. This means the whole player positioning is a second off. <br>
 ![MyProblem](images/my_problem.gif?raw=true)
 <br> <br>
-*Using my tool we can demonstrate the same problem like this.* <br>
+*Using my tool (https://boskodeveloper.github.io) we can demonstrate the same problem like this.* <br>
 *As you can see the "player 2" moves the blue circle which is "player 1" a bit delayed* <br>
 ![MyProblem](images/my_problem_toolV2.gif?raw=true)
 
