@@ -46,6 +46,8 @@ Client prediction makes sure you see your actions happen right away, making the 
 - **Consistency and Fairness:** <br>
 Server reconciliation ensures that everyone in the game world sees the same thing and plays by the same rules, making it fair and consistent.
 
+![IntroGif](images/lag_input.gif?raw=true)
+
 ## How it looks like without any Client-prediction and Server reconciliation
 tell us - delayed
 // show the tools delay
