@@ -7,9 +7,9 @@ This tutorial will teach you what Client-prediction and Server reconciliation is
 
 **For who is it usefull?** <br>
 For anyone making developing a multiplayer game were precision of (for example) the players position needs to be consistend. This is architecture is mostly used in fast-paced multiplayer games. (First person shooters, online parkour games, etc)
-<br>
-*No this is not the gif lagging, it's the gameplay*
 
+*No this is not the gif lagging, it's the gameplay* <br>
+![IntroGif](images/lag_intro.gif?raw=true)
 
 **Knowledge expected from you**
 - Knowledge of the Unity Engine and C#
