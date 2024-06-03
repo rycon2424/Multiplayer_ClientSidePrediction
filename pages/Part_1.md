@@ -3,22 +3,24 @@
 # Intro to Client-prediction and Server reconciliation tutorial
 
 **What is this tutorial about?** <br>
-tell us
+This tutorial will teach you what Client-prediction and Server reconciliation is in a multiplayer game enviroment and how you can apply it to your own project.
 
 **For who is it usefull?** <br>
 For anyone making developing a multiplayer game were precision of (for example) the players position needs to be consistend. This is architecture is mostly used in fast-paced multiplayer games. (First person shooters, online parkour games, etc)
+<br>
+*No this is not the gif lagging, it's the gameplay*
 
-// insert lag gif
 
 **Knowledge expected from you**
 - Knowledge of the Unity Engine and C#
 - Knowing the basics of networking (Rpcs, packages, multiplayer)
-- Using networking solutions or similar to "Netcode for Gameobjects", "Mirror"
-- Being able to write code in a code editor (IDE)
+- Being able to write code in a code editor (IDE) <br>
+- Using networking solutions or similar to "Netcode for Gameobjects", "Mirror" <br>
+  ***(note: I am going to use Netcode for Gameobjects throughout this tutorial)***
 
 **Small example that will be used and referenced to when talking about prediction and reconciliation**
 - https://boskodeveloper.github.io <br>
-(note: this link will be shown everytime I use it for reference)
+***(note: this link will be shown everytime I use it for reference)***
 
 **Contact**  <br>
 For any questions feel free to mail at: boskoivkovic.developer@gmail.com
