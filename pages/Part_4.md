@@ -4,8 +4,8 @@
 
 ## Unity's multiplayer playmode
 Using this package from unity makes developing multiplayer in general way easier. Since can open multiple game windows and connect with eachother. <br> <br>
-*(Package name: "com.unity.multiplayer.playmode")*
-
+*(Package name: "com.unity.multiplayer.playmode")* <br>
+![multiplay](images/multiplay.PNG?raw=true)
 
 ## Don't spam Rpcs in the update loop
 tell us
