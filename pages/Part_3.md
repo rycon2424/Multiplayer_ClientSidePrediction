@@ -177,7 +177,7 @@ Each tick we be doing 2 things:
         {
 ```
 <br>
-Now that we are done with the clients side of data. We now need to make the server actually do something with this info. This is basically where we are at right now, the local client has prediction for himself but the server and other players do not acknowledge any of it. <br> <br>
+Now that we are done with the clients side of data. We now need to make the server actually do something with this info. This is basically where we are at right now, the local client has prediction for himself but the server and other players do not acknowledge any of it. Using my tool (https://boskodeveloper.github.io) we can visualise it. <br> <br>
 
 ![Spawning Players](images/prediction.gif?raw=true)
 
