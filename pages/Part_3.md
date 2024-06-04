@@ -16,9 +16,9 @@ We will implement the Client-prediction and Server reconciliation as bare bone a
 ## Applying client-side prediction by moving locally and sending all data
 The first thing we need is to store all movement each tick. We can do this by making a class to store a ticks information. <br>
 We need to store 3 values.
-- tick: The current tick of this data.
-- movementInput: The current input where the player is headed.
-- position: The position of the player. <br>
+- **tick** : The current tick of this data.
+- **movementInput** : The current input where the player is headed.
+- **position** : The position of the player. <br>
 ```c#
     using Unity.Netcode;
 
@@ -43,10 +43,25 @@ We need to implement the "INetworkSerializable" interface for this class to be a
 ### All Variables
 Now lets set up all the variables in the player movement script. <br> 
 *(You can do this elsewhere but for simplicity reasons ill be doing all code in the player movement script)*
-<br> <br>
-tell us
+<br>
+- **BUFFERSIZE** : Amount of ticks that will be recorded as history. (1024)
+  <br> <br>
+- **clientMovementDatas** : History of all MovementData's that have been send to the server. The furthest it can look back to is 1024 ticks ago based on the BUFFERSIZE.
+  <br> <br>
+- **playerSpeed** : The players movement speed.
+  <br> <br>
+- **currentTick** : The current tick the player is on.
+- **time** : The time elapsed since start.
+- **tickTime** : The time per tick we will calculate in Awake based on the tickrate
+  <br> <br>
+- **movement** : The current movement direction that will be a vector2 (Up/Down / Left/Right).
+  <br> <br>
+- **maxPositionError** : The maximum distance allowed that the player can travel between ticks.
+- **tickRate** : The tickrate the server runs on (How many times per second the server communicates to the client and the other way around).
 
 ```c#
+        private const int BUFFERSIZE = 1024;
+
         [Header("Client Specific")]
         [SerializeField] MovementData[] clientMovementDatas = new MovementData[BUFFERSIZE];
 
@@ -64,7 +79,6 @@ tell us
         // Server Specific (When the movementspeed is higher than this value needs to be higher too)
         [SerializeField] float maxPositionError = 0.5f;
         private int tickRate = 60;
-        private const int BUFFERSIZE = 1024;
 ```
 
 ### Set the ticktime in awake and count the time going up in the update loop
@@ -112,7 +126,7 @@ Make sure to make a function that calculated the movement since this needs to be
 ```
 
 ### Performing the movement each tick and letting the server know
-In the fixed update we will first check if this object is owned by the local client. If it is we will perform all movement logic each tick. <br>
+In the fixed update we will first check if this object is owned by the local client. If it is owned the local client, we will perform all movement logic each tick. <br>
 Each tick we be doing 2 things:
 - Move the client locally
 - Send a new MovementData class **of this tick** with all current information to the server. (tick, movement direction and current position)
@@ -160,6 +174,11 @@ Each tick we be doing 2 things:
 Now that we are done with the clients side of data. We now need to make the server actually do something with this info.
 
 ## Applying server side reconciliation using x
+
+### Checking if the position gap is too high
+tell us
+
+### Returning the player to it's old position if there is weird behavior detected
 tell us
 
 # Next Part: Tips and Optimization
