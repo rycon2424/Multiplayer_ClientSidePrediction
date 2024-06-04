@@ -37,8 +37,32 @@ We need to store 3 values.
         }
     }
 ```
-<br>
 We need to implement the "INetworkSerializable" interface for this class to be able to get send through the network.
+
+### All Variables
+Now lets set up all the variables in the player movement script. <br> 
+*(You can do this elsewhere but for simplicity reasons ill be doing all code in the player movement script)*
+
+```c#
+        [Header("Client Specific")]
+        [SerializeField] MovementData[] clientMovementDatas = new MovementData[BUFFERSIZE];
+
+        [Header("Client and Server Specific")]
+        [SerializeField] float playerSpeed = 2;
+
+        // Client and Server Specific
+        private int currentTick;
+        private float time;
+        private float tickTime;
+
+        // Client Specific
+        [SerializeField] private Vector2 movement;
+
+        // Server Specific (When the movementspeed is higher than this value needs to be higher too)
+        private float maxPositionError = 0.5f;
+        private int tickRate = 60;
+        private const int BUFFERSIZE = 1024;
+```
 
 ## Applying server side reconciliation using x
 tell us
