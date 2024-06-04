@@ -90,9 +90,9 @@ namespace Rycon.Online.Examples
             }
         }
 
-        private Vector3 CalculateMovement(Vector3 movement)
+        private Vector3 CalculateMovement(Vector3 inputMovement)
         {
-            return new Vector3(movement.x, 0, movement.y) *playerSpeed * Time.deltaTime;
+            return new Vector3(inputMovement.x, 0, inputMovement.y) * playerSpeed * Time.deltaTime;
         }
 
         private void StoreAndSendTick()
