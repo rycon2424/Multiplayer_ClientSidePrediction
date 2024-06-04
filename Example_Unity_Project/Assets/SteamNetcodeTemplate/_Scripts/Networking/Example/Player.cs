@@ -26,7 +26,7 @@ namespace Rycon.Online.Examples
         private CharacterInput input;
 
         // Server Specific (When the movementspeed is higher than this value needs to be higher too)
-        private float maxPositionError = 0.5f;
+        [SerializeField] float maxPositionError = 0.5f;
         private int tickRate = 60;
         private const int BUFFERSIZE = 1024;
 
