@@ -242,6 +242,8 @@ Finally force the player back to its last tick that made sense
         }
 ```
 
+insert gif of how it would look like if the player would force change the transform in the inspector. it will correct itself.
+
 # Next Part: Tips and Optimization
 [Part 4: Tips and Optimization](Part_4.md)  <br>
 
