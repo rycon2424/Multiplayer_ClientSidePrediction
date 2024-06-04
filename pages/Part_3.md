@@ -2,6 +2,12 @@
 
 # Resolving the problem
 
+## Before we start implementing it
+Make sure you have a connection setup ready and a spawn manager so when the host and client connect they will both spawn in their own player and be visible for the other.
+
+*How it looks like on my end*
+
+
 ## Applying client-side prediction using x
 tell us
 
