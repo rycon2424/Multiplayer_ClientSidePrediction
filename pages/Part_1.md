@@ -12,7 +12,8 @@ For anyone making developing a multiplayer game were precision of (for example) 
 ![IntroGif](images/lag_intro.gif?raw=true)
 
 **Knowledge expected from you**
-- Knowledge of the Unity Engine and C#
+- Knowledge of the Unity Engine and C# <br>
+  ***(note: To keep this tutorial relevant for a long time, im using Unity's new input system in this tutorial. Although you can follow it with the default/old one too)***
 - Knowing the basics of networking (Rpcs, packages, multiplayer)
 - Being able to write code in a code editor (IDE) <br>
 - Using networking solutions or similar to "Netcode for Gameobjects", "Mirror" <br>
