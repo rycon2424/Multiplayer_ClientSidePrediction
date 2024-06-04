@@ -40,6 +40,12 @@ We need to store 3 values.
 ```
 We need to implement the "INetworkSerializable" interface for this class to be able to get send through the network.
 
+### NetworkBehaviour !!!
+For Netcode for Gameobjects to be able to send Rpcs inside a class it needs to inherit from NetworkBehaviour.
+```c#
+public class Player : NetworkBehaviour
+```
+
 ### All Variables
 Now lets set up all the variables in the player movement script. <br> 
 *(You can do this elsewhere but for simplicity reasons ill be doing all code in the player movement script)*
