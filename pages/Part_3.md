@@ -104,8 +104,7 @@ Now lets set up all the variables in the player movement script. <br>
 Make sure to make a function that calculated the movement since this needs to be the same on 3 occasions. We do this because there will be 3 places where it can possibly be called. <br>
 1 - Local as soon as the player presses move <br>
 2 - On the server so the server updates the position <br>
-3 - On reconciliation if the player is cheating <br>
-<br>
+3 - On reconciliation if the player is cheating <br> <br>
 *Example of my way of getting and calculating the movement* 
 ```c#
         // Input system
@@ -184,6 +183,9 @@ Now that we are done with the clients side of data. We now need to make the serv
 ## Applying server side reconciliation
 
 ### Checking if the position gap is too high
+In this function, we synchronize the client's position with the server to ensure that the server accurately reflects the client's intended movement. We use the CalculateMovement function again to ensure consistency between the client's movement and the server's movement calculations. <br>
+
+Next, we verify if the client's position matches the position sent by the client in the "MovementData currentMovementData". If the difference exceeds the "maxPositionError" value, it indicates that the player is either moving too quickly or in an impossible manner, suggesting potential cheating. <br>
 
 ```c#
         [ServerRpc]
@@ -205,10 +207,25 @@ Now that we are done with the clients side of data. We now need to make the serv
 ```
 
 ### Returning the player to it's old position if there is weird behavior detected
-Now Add this inside the Vector3.Distance check
+Now that we have a method for detecting unusual player movement, the server notifies the cheating client of the specific tick on which the cheating occurred using the currentMovementData.tick value. <br>
 
+The client receives the tick and identifies the last position from the previous tick where no cheating was detected. <br>
+
+*We update the MoveServerRpc function by adding the ReconciliateClientRpc call where first the Debug.Log was*
 ```#
+        [ServerRpc]
+        private void MoveServerRpc(MovementData currentMovementData, MovementData lastMovementData, ServerRpcParams parameters)
+        {
+            Vector3 startPos = transform.position;
 
+            transform.position = lastMovementData.position;
+            transform.position += CalculateMovement(lastMovementData.movementInput);
+
+            Vector3 correctPosition = transform.position;
+
+            // if position is off
+            if (Vector3.Distance(correctPosition, currentMovementData.position) > maxPositionError)
+            {
                 ReconciliateClientRpc(currentMovementData.tick, new ClientRpcParams
                 {
                     Send = new ClientRpcSendParams
@@ -216,9 +233,21 @@ Now Add this inside the Vector3.Distance check
                         TargetClientIds = new List<ulong>() { parameters.Receive.SenderClientId }
                     }
                 });
+            }
+        }
+
+        [ClientRpc]
+        private void ReconciliateClientRpc(int activationTick, ClientRpcParams parameters)
+        {
+            Vector3 correctPosition = clientMovementDatas[(activationTick - 1) % BUFFERSIZE].position;
+        }
 ```
 
-Finally force the player back to its last tick that made sense
+### Finally force the player back to its last **valid** tick
+We update the ReconciliateClientRpc function to use the tick on which cheating was detected to reconcile up to the activation tick, which is the tick where the unusual player movement occurred.
+<br>
+This way it ensures that the player cannot cheat and will be forced back for all clients when attempting to do so.
+
 ```c#
         [ClientRpc]
         private void ReconciliateClientRpc(int activationTick, ClientRpcParams parameters)
@@ -241,6 +270,12 @@ Finally force the player back to its last tick that made sense
             transform.position = correctPosition;
         }
 ```
+
+## Testing the final code
+We can test our code by adding this script to the player and trying to change the transform component's position to something else. <br>
+If it's bigger than the "maxPositionError" we have set then it will teleport back for all clients. <br>
+
+*Here you can see the demonstration*
 
 insert gif of how it would look like if the player would force change the transform in the inspector. it will correct itself.
 
