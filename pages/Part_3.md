@@ -6,7 +6,8 @@
 Make sure you have a connection setup ready and a spawn manager so when the host and client connect they will both spawn in their own player and be visible for the other.
 
 *How it looks like on my end, make sure you have something similar to it* <br>
-![Spawning Players](images/tutorial_spawn.gif?raw=true)
+![Spawning Players](images/tutorial_spawn.gif?raw=true) <br>
+*For clarity the red capsule is the host and the blue the client*
 
 ## Applying client-side prediction using x
 tell us
