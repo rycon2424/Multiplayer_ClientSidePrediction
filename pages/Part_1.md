@@ -62,7 +62,7 @@ Server reconciliation ensures that everyone in the game world sees the same thin
 ![IntroGif](images/lag_input.gif?raw=true)
 
 ## How it looks like without any Client-prediction and Server reconciliation
-Here is an example of how it looks like in my own project. As you can see the player moves on (25-50ms ping) **a whole second** later for the other player. This means the whole player positioning is a second off. <br>
+Here is an example of how it looks like in my own project. As you can see the player moves on (25-50ms ping) **a whole second** later for the other player. This means the whole player positioning is a second off. <br> <br> The worst part is that this synced movement (using Unity's ClientNetworkTransform) is fully client authorative, meaning that the client can teleport or cheat however it wants and the server won't complain. <br> <br>
 ![MyProblem](images/my_problem.gif?raw=true)
 <br> <br>
 *Using my tool (https://boskodeveloper.github.io) we can demonstrate the same problem like this.* <br>
