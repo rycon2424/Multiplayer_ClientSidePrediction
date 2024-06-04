@@ -42,6 +42,8 @@ We need to implement the "INetworkSerializable" interface for this class to be a
 ### All Variables
 Now lets set up all the variables in the player movement script. <br> 
 *(You can do this elsewhere but for simplicity reasons ill be doing all code in the player movement script)*
+<br> <br>
+Explanation
 
 ```c#
         [Header("Client Specific")]
@@ -63,8 +65,40 @@ Now lets set up all the variables in the player movement script. <br>
         private int tickRate = 60;
         private const int BUFFERSIZE = 1024;
 ```
-<br>
 
+### Set the ticktime in awake and count the time going up in the update loop
+```c#
+        private void Awake()
+        {
+            tickTime = 1f / tickRate;
+        }
+
+        private void Update()
+        {
+            time += Time.deltaTime;
+        }
+```
+
+### Movement Handling
+Make sure to make a function that calculated the movement since this needs to be the same on 3 occasions. We do this because there will be 3 places where it can possibly be called. <br>
+1 - Local as soon as the player presses move <br>
+2 - On the server so the server updates the position <br>
+3 - On reconciliation if the player is cheating <br>
+  
+```c#
+        private void Move()
+        {
+            if (input.PlayerExample.Movement.IsPressed())
+            {
+                transform.position += CalculateMovement(movement);
+            }
+        }
+
+        private Vector3 CalculateMovement(Vector3 inputMovement)
+        {
+            return new Vector3(inputMovement.x, 0, inputMovement.y) * playerSpeed * Time.deltaTime;
+        }
+```
 
 ## Applying server side reconciliation using x
 tell us
