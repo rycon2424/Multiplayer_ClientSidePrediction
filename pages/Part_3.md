@@ -9,6 +9,9 @@ Make sure you have a connection setup ready and a spawn manager so when the host
 ![Spawning Players](images/tutorial_spawn.gif?raw=true) <br>
 *To clarify, the red capsule functions as the host, while the blue one acts as the client.*
 
+## Before we start
+We will implement the Client-prediction and Server reconciliation as bare bone as possible. This can after this tutorial easily be optimized and expanded.
+
 ## Applying client-side prediction by storing all movement per tick
 The first thing we need is to store all movement each tick. We can do this by making a class to store a ticks information. <br>
 We need to store 3 values.
