@@ -10,7 +10,30 @@ Make sure you have a connection setup ready and a spawn manager so when the host
 *To clarify, the red capsule functions as the host, while the blue one acts as the client.*
 
 ## Applying client-side prediction by storing all movement per tick
-tell us
+The first thing we need is to store all movement each tick. We can do this by making a class to store a ticks information. <br>
+We need to store 3 values.
+- tick: The current tick of this data.
+- movementInput: The current input where the player is headed.
+- position: The position of the player. <br>
+```c#
+    [System.Serializable]
+    public class MovementData : INetworkSerializable
+    {
+        public int tick;
+        public Vector3 movementInput;
+        public Vector3 position;
+
+        // Serialized so it can be send through an RPC
+        public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
+        {
+            serializer.SerializeValue(ref tick);
+            serializer.SerializeValue(ref movementInput);
+            serializer.SerializeValue(ref position);
+        }
+    }
+```
+<br>
+We need to implement the "INetworkSerializable" interface for this class to be able to get send through the network.
 
 ## Applying server side reconciliation using x
 tell us
