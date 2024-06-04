@@ -5,7 +5,7 @@
 **What is this tutorial about?** <br>
 This tutorial will teach you what Client-prediction and Server reconciliation is in a multiplayer game enviroment and how you can apply it to your own project.
 
-**For who is it usefull?** <br>
+**For who is it useful?** <br>
 For anyone making developing a multiplayer game were precision of (for example) the players position needs to be consistend. This is architecture is mostly used in fast-paced multiplayer games. (First person shooters, online parkour games, etc)
 
 *No this is not the gif lagging, it's the gameplay* <br>
