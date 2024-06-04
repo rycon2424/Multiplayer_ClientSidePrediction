@@ -12,7 +12,7 @@ Make sure you have a connection setup ready and a spawn manager so when the host
 ## Before we start
 We will implement the Client-prediction and Server reconciliation as bare bone as possible. This can after this tutorial easily be optimized and expanded.
 
-## Applying client-side prediction by storing all movement per tick
+## Applying client-side prediction by moving locally and sending all data
 The first thing we need is to store all movement each tick. We can do this by making a class to store a ticks information. <br>
 We need to store 3 values.
 - tick: The current tick of this data.
@@ -43,7 +43,7 @@ We need to implement the "INetworkSerializable" interface for this class to be a
 Now lets set up all the variables in the player movement script. <br> 
 *(You can do this elsewhere but for simplicity reasons ill be doing all code in the player movement script)*
 <br> <br>
-Explanation
+tell us
 
 ```c#
         [Header("Client Specific")]
@@ -84,20 +84,76 @@ Make sure to make a function that calculated the movement since this needs to be
 1 - Local as soon as the player presses move <br>
 2 - On the server so the server updates the position <br>
 3 - On reconciliation if the player is cheating <br>
-  
+<br>
+*Example of my way of getting and calculating the movement* 
 ```c#
+        // Input system
+        private void OnMovement(InputAction.CallbackContext context)
+        {
+            Vector2 inputReceived = Vector2.zero;
+            if (context.performed)
+            {
+                inputReceived = context.ReadValue<Vector2>();
+            }
+
+            movement = inputReceived; // update the movement variable
+        }
+
         private void Move()
         {
-            if (input.PlayerExample.Movement.IsPressed())
-            {
-                transform.position += CalculateMovement(movement);
-            }
+            transform.position += CalculateMovement(movement);
         }
 
         private Vector3 CalculateMovement(Vector3 inputMovement)
         {
             return new Vector3(inputMovement.x, 0, inputMovement.y) * playerSpeed * Time.deltaTime;
         }
+```
+
+### Performing the movement each tick and letting the server know
+In the fixed update we will first check if this object is owned by the local client. If it is we will perform all movement logic each tick. <br>
+Each tick we be doing 2 things:
+- Move the client locally
+- Send a new MovementData class **of this tick** with all current information to the server. (tick, movement direction and current position)
+
+```c#
+        private void FixedUpdate()
+        {
+            if (!IsClient || !IsOwner) // we want only the local client to perform all code here
+                return;
+
+            while (time > tickTime)
+            {
+                currentTick++;
+                time -= tickTime;
+
+                Move(); // moving on each of the ticks
+                StoreAndSendTick(); // sending the tick data of last movement and position
+            }
+        }
+
+        private void StoreAndSendTick()
+        {
+            // Store the tick movement
+            clientMovementDatas[currentTick % BUFFERSIZE] = new MovementData
+            {
+                tick = currentTick,
+                movementInput = movement,
+                position = transform.position
+            };
+
+            if ((currentTick % BUFFERSIZE) < 2) // It needs to have atleast 2 ticks already counted before reconciliation
+                return;
+
+            MoveServerRpc(clientMovementDatas[currentTick % BUFFERSIZE], clientMovementDatas[(currentTick - 1) % BUFFERSIZE],
+                new ServerRpcParams { Receive = new ServerRpcReceiveParams { SenderClientId = OwnerClientId } });
+        }
+
+        [ServerRpc]
+        private void MoveServerRpc(MovementData currentMovementData, MovementData lastMovementData, ServerRpcParams parameters)
+        {
+            // Here we will implement the reconciliation later
+        {
 ```
 
 ## Applying server side reconciliation using x
