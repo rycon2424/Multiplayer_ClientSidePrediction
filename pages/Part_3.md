@@ -176,9 +176,9 @@ Each tick we be doing 2 things:
         {
 ```
 <br>
-Now that we are done with the clients side of data. We now need to make the server actually do something with this info. This is basically where we are at right now, the local client has prediction for himself but the server and other players do not acknowledge any of it. Using my tool (https://boskodeveloper.github.io) we can visualise it. <br> <br>
+Now that we are done with the clients side prediction. We now need to make the server actually do something with this info. This is basically where we are at right now, the local client has prediction for himself but the server and other players do not acknowledge any of it. You will also notice that the player stutters when trying to move left to right quickly. Using my tool (https://boskodeveloper.github.io) we can visualise this. <br> <br>
 
-![Spawning Players](images/prediction.gif?raw=true)
+![Spawning Players](images/predictionV2.gif?raw=true)
 
 ## Applying server side reconciliation
 
