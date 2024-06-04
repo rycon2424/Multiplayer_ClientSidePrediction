@@ -1,4 +1,4 @@
-Library: Z:\_GithubProjects\Unity-Netcode-Steam-Template\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+Library: Z:\_GithubProjects\Multiplayer_ClientSidePrediction\Example_Unity_Project\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --platform=Windows
 --backend=burst-llvm-15
 --target=X64_SSE2
@@ -33,6 +33,7 @@ Library: Z:\_GithubProjects\Unity-Netcode-Steam-Template\Temp\BurstOutput\Data\P
 --assembly-defines=System.Transactions;
 --assembly-defines=System.Xml;
 --assembly-defines=System.Xml.Linq;
+--assembly-defines=unity-websocket-sharp;
 --assembly-defines=Unity.AI.Navigation;
 --assembly-defines=Unity.Burst;
 --assembly-defines=Unity.Burst.Unsafe;
@@ -41,6 +42,8 @@ Library: Z:\_GithubProjects\Unity-Netcode-Steam-Template\Temp\BurstOutput\Data\P
 --assembly-defines=Unity.InputSystem;
 --assembly-defines=Unity.InputSystem.ForUI;
 --assembly-defines=Unity.Mathematics;
+--assembly-defines=Unity.Multiplayer.Playmode.Common.Runtime;
+--assembly-defines=Unity.Multiplayer.Playmode;
 --assembly-defines=Unity.Multiplayer.Samples.Utilities.ClientAuthority;
 --assembly-defines=Unity.Multiplayer.Samples.Utilities;
 --assembly-defines=Unity.Multiplayer.Samples.Utilities.RNSM;
@@ -75,18 +78,23 @@ Library: Z:\_GithubProjects\Unity-Netcode-Steam-Template\Temp\BurstOutput\Data\P
 --assembly-defines=Unity.Services.Core.Scheduler;
 --assembly-defines=Unity.Services.Core.Telemetry;
 --assembly-defines=Unity.Services.Core.Threading;
+--assembly-defines=Unity.Services.Multiplay;
+--assembly-defines=Unity.Services.Multiplay.Sqp;
+--assembly-defines=Unity.Services.Multiplay.Wire.Internal;
 --assembly-defines=Unity.Services.QoS;
 --assembly-defines=Unity.Services.Relay;
+--assembly-defines=Unity.Services.Wire.Internal;
 --assembly-defines=Unity.TextMeshPro;
 --assembly-defines=Unity.Timeline;
 --assembly-defines=Unity.Tutorials.Core;
 --assembly-defines=UnityEngine;
+--assembly-defines=websocket-sharp;
 --linker-options=PdbAltPath="Unity-Netcode-Steam-Template_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=Z:\_GithubProjects\Unity-Netcode-Steam-Template\Temp\Burst
+--temp-folder=Z:\_GithubProjects\Multiplayer_ClientSidePrediction\Example_Unity_Project\Temp\Burst
 --key-folder=U:/Unity/Hub/Editor/2023.2.3f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=Z:\_GithubProjects\Unity-Netcode-Steam-Template\Library\Burst
---output=Z:\_GithubProjects\Unity-Netcode-Steam-Template\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--decode-folder=Z:\_GithubProjects\Multiplayer_ClientSidePrediction\Example_Unity_Project\Library\Burst
+--output=Z:\_GithubProjects\Multiplayer_ClientSidePrediction\Example_Unity_Project\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10
@@ -204,6 +212,7 @@ Library: Z:\_GithubProjects\Unity-Netcode-Steam-Template\Temp\BurstOutput\Data\P
 --assembly-defines=System.Transactions;
 --assembly-defines=System.Xml;
 --assembly-defines=System.Xml.Linq;
+--assembly-defines=unity-websocket-sharp;
 --assembly-defines=Unity.AI.Navigation;
 --assembly-defines=Unity.Burst;
 --assembly-defines=Unity.Burst.Unsafe;
@@ -212,6 +221,8 @@ Library: Z:\_GithubProjects\Unity-Netcode-Steam-Template\Temp\BurstOutput\Data\P
 --assembly-defines=Unity.InputSystem;
 --assembly-defines=Unity.InputSystem.ForUI;
 --assembly-defines=Unity.Mathematics;
+--assembly-defines=Unity.Multiplayer.Playmode.Common.Runtime;
+--assembly-defines=Unity.Multiplayer.Playmode;
 --assembly-defines=Unity.Multiplayer.Samples.Utilities.ClientAuthority;
 --assembly-defines=Unity.Multiplayer.Samples.Utilities;
 --assembly-defines=Unity.Multiplayer.Samples.Utilities.RNSM;
@@ -246,18 +257,23 @@ Library: Z:\_GithubProjects\Unity-Netcode-Steam-Template\Temp\BurstOutput\Data\P
 --assembly-defines=Unity.Services.Core.Scheduler;
 --assembly-defines=Unity.Services.Core.Telemetry;
 --assembly-defines=Unity.Services.Core.Threading;
+--assembly-defines=Unity.Services.Multiplay;
+--assembly-defines=Unity.Services.Multiplay.Sqp;
+--assembly-defines=Unity.Services.Multiplay.Wire.Internal;
 --assembly-defines=Unity.Services.QoS;
 --assembly-defines=Unity.Services.Relay;
+--assembly-defines=Unity.Services.Wire.Internal;
 --assembly-defines=Unity.TextMeshPro;
 --assembly-defines=Unity.Timeline;
 --assembly-defines=Unity.Tutorials.Core;
 --assembly-defines=UnityEngine;
+--assembly-defines=websocket-sharp;
 --linker-options=PdbAltPath="Unity-Netcode-Steam-Template_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=Z:\_GithubProjects\Unity-Netcode-Steam-Template\Temp\Burst
+--temp-folder=Z:\_GithubProjects\Multiplayer_ClientSidePrediction\Example_Unity_Project\Temp\Burst
 --key-folder=U:/Unity/Hub/Editor/2023.2.3f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=Z:\_GithubProjects\Unity-Netcode-Steam-Template\Library\Burst
---output=Z:\_GithubProjects\Unity-Netcode-Steam-Template\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--decode-folder=Z:\_GithubProjects\Multiplayer_ClientSidePrediction\Example_Unity_Project\Library\Burst
+--output=Z:\_GithubProjects\Multiplayer_ClientSidePrediction\Example_Unity_Project\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10

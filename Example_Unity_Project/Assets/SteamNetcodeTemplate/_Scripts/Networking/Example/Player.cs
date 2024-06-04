@@ -47,6 +47,12 @@ namespace Rycon.Online.Examples
 
                 input.Enable();
             }
+
+            Material mat = new Material(GetComponent<MeshRenderer>().materials[0]); 
+
+            mat.color = netObject.OwnerClientId == 0 ? Color.red : Color.blue;
+
+            GetComponent<MeshRenderer>().materials = new Material[1] { mat };
         }
 
         private void OnDisable()
