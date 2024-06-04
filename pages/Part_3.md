@@ -179,13 +179,66 @@ Each tick we be doing 2 things:
 <br>
 Now that we are done with the clients side of data. We now need to make the server actually do something with this info.
 
-## Applying server side reconciliation using x
+## Applying server side reconciliation
 
 ### Checking if the position gap is too high
-tell us
+
+```c#
+        [ServerRpc]
+        private void MoveServerRpc(MovementData currentMovementData, MovementData lastMovementData, ServerRpcParams parameters)
+        {
+            Vector3 startPos = transform.position;
+
+            transform.position = lastMovementData.position;
+            transform.position += CalculateMovement(lastMovementData.movementInput);
+
+            Vector3 correctPosition = transform.position;
+
+            // if position is off
+            if (Vector3.Distance(correctPosition, currentMovementData.position) > maxPositionError)
+            {
+                Debug.Log("position is off");
+            }
+        }
+```
 
 ### Returning the player to it's old position if there is weird behavior detected
-tell us
+Now Add this inside the Vector3.Distance check
+
+```#
+
+                ReconciliateClientRpc(currentMovementData.tick, new ClientRpcParams
+                {
+                    Send = new ClientRpcSendParams
+                    {
+                        TargetClientIds = new List<ulong>() { parameters.Receive.SenderClientId }
+                    }
+                });
+```
+
+Finally force the player back to its last tick that made sense
+```c#
+        [ClientRpc]
+        private void ReconciliateClientRpc(int activationTick, ClientRpcParams parameters)
+        {
+            Vector3 correctPosition = clientMovementDatas[(activationTick - 1) % BUFFERSIZE].position;
+
+            // Reconcile until the activation tick also known as the tick where something was off/cheated
+            while (activationTick <= currentTick)
+            {
+                Vector3 activationTickMovement = clientMovementDatas[(activationTick - 1) % BUFFERSIZE].movementInput;
+
+                transform.position = correctPosition;
+
+                transform.position += CalculateMovement(activationTickMovement);
+
+                clientMovementDatas[activationTick % BUFFERSIZE].position = correctPosition;
+                activationTick++;
+            }
+
+            transform.position = correctPosition;
+        }
+```
 
 # Next Part: Tips and Optimization
 [Part 4: Tips and Optimization](Part_4.md)  <br>
