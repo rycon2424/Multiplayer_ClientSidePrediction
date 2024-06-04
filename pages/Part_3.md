@@ -273,11 +273,10 @@ This way it ensures that the player cannot cheat and will be forced back for all
 
 ## Testing the final code
 We can test our code by adding this script to the player and trying to change the transform component's position to something else. <br>
-If it's bigger than the "maxPositionError" we have set then it will teleport back for all clients. <br>
+If it's bigger than the "maxPositionError" we have set, it will teleport back for all clients. <br>
 
 *Here you can see the demonstration*
-
-insert gif of how it would look like if the player would force change the transform in the inspector. it will correct itself.
+![Finalcode](images/final_code.gif?raw=true)
 
 # Next Part: Tips and Optimization
 [Part 4: Tips and Optimization](Part_4.md)  <br>
