@@ -18,7 +18,7 @@ For anyone making developing a multiplayer game were precision of (for example) 
 - Being able to write code in a code editor (IDE) <br>
 - Using networking solutions or similar to "Netcode for Gameobjects", "Mirror" <br>
   ***(note: I am going to use Netcode for Gameobjects throughout this tutorial)***
-- This tutorial includes an **example build** of the final product + **a build** so you can test it locally.
+- This tutorial includes an **example project** (Unity Version: 2023.2.3f1) + **a build** so you can test it locally.
 
 **Small example that will be used and referenced to when talking about prediction and reconciliation**
 - https://boskodeveloper.github.io <br>
