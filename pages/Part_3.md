@@ -9,7 +9,7 @@ Make sure you have a connection setup ready and a spawn manager so when the host
 ![Spawning Players](images/tutorial_spawn.gif?raw=true) <br>
 *To clarify, the red capsule functions as the host, while the blue one acts as the client.*
 
-## Applying client-side prediction using x
+## Applying client-side prediction by storing all movement per tick
 tell us
 
 ## Applying server side reconciliation using x
