@@ -19,6 +19,8 @@ We need to store 3 values.
 - movementInput: The current input where the player is headed.
 - position: The position of the player. <br>
 ```c#
+    using Unity.Netcode;
+
     [System.Serializable]
     public class MovementData : INetworkSerializable
     {
