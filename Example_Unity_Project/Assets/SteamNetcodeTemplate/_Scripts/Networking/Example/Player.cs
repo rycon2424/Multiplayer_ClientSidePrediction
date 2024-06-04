@@ -49,7 +49,7 @@ namespace Rycon.Online.Examples
                 input.Enable();
             }
 
-            Material mat = new Material(GetComponent<MeshRenderer>().materials[0]); 
+            Material mat = new Material(GetComponent<MeshRenderer>().materials[0]);
 
             mat.color = netObject.OwnerClientId == 0 ? Color.red : Color.blue;
 
@@ -84,10 +84,7 @@ namespace Rycon.Online.Examples
 
         private void Move()
         {
-            if (input.PlayerExample.Movement.IsPressed())
-            {
-                transform.position += CalculateMovement(movement);
-            }
+            transform.position += CalculateMovement(movement);
         }
 
         private Vector3 CalculateMovement(Vector3 inputMovement)
