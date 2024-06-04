@@ -13,7 +13,6 @@ namespace Rycon.Online.Examples
 
         [Header("Client and Server Specific")]
         [SerializeField] float playerSpeed = 2;
-        [SerializeField] int tickRate = 60;
 
         // Client and Server Specific
         private int currentTick;
@@ -21,13 +20,15 @@ namespace Rycon.Online.Examples
         private float tickTime;
 
         // Client Specific
-        private const int BUFFERSIZE = 1024;
         [SerializeField] private Vector2 movement;
+
         private NetworkObject netObject;
         private CharacterInput input;
 
         // Server Specific (When the movementspeed is higher than this value needs to be higher too)
         private float maxPositionError = 0.5f;
+        private int tickRate = 60;
+        private const int BUFFERSIZE = 1024;
 
         private void Awake()
         {
@@ -77,6 +78,7 @@ namespace Rycon.Online.Examples
                 time -= tickTime;
 
                 Move(); // moving on each of the ticks
+                StoreAndSendTick(); // sending the tick data of last movement and position
             }
         }
 
@@ -84,10 +86,17 @@ namespace Rycon.Online.Examples
         {
             if (input.PlayerExample.Movement.IsPressed())
             {
-                Vector3 calculatedMovement = new Vector3(movement.x, 0, movement.y) * playerSpeed * Time.deltaTime;
-                transform.position += calculatedMovement;
+                transform.position += CalculateMovement(movement);
             }
+        }
 
+        private Vector3 CalculateMovement(Vector3 movement)
+        {
+            return new Vector3(movement.x, 0, movement.y) *playerSpeed * Time.deltaTime;
+        }
+
+        private void StoreAndSendTick()
+        {
             // Store the tick movement
             clientMovementDatas[currentTick % BUFFERSIZE] = new MovementData
             {
@@ -99,9 +108,8 @@ namespace Rycon.Online.Examples
             if ((currentTick % BUFFERSIZE) < 2) // It needs to have atleast 2 ticks already counted before reconciliation
                 return;
 
-            Debug.Log("First: " + (currentTick % BUFFERSIZE) + " Before: " + ((currentTick - 1) % BUFFERSIZE));
             MoveServerRpc(clientMovementDatas[currentTick % BUFFERSIZE], clientMovementDatas[(currentTick - 1) % BUFFERSIZE],
-                new ServerRpcParams { Receive = new ServerRpcReceiveParams { SenderClientId = OwnerClientId} });
+                new ServerRpcParams { Receive = new ServerRpcReceiveParams { SenderClientId = OwnerClientId } });
         }
 
         // Input
@@ -123,14 +131,12 @@ namespace Rycon.Online.Examples
         {
             Vector3 startPos = transform.position;
 
-            Vector3 calculatedMovement = new Vector3(lastMovementData.movementInput.x, 0, lastMovementData.movementInput.y) * playerSpeed * Time.deltaTime;
-
             transform.position = lastMovementData.position;
-            transform.position += calculatedMovement;
+            transform.position += CalculateMovement(lastMovementData.movementInput);
 
             Vector3 correctPosition = transform.position;
 
-            // if position is off indeed
+            // if position is off
             if (Vector3.Distance(correctPosition, currentMovementData.position) > maxPositionError)
             {
                 Debug.Log("position is off");
@@ -149,15 +155,14 @@ namespace Rycon.Online.Examples
         {
             Vector3 correctPosition = clientMovementDatas[(activationTick - 1) % BUFFERSIZE].position;
 
-            // Reconcile until the activation tick also known as the tick were there was something off
+            // Reconcile until the activation tick also known as the tick where something was off/cheated
             while (activationTick <= currentTick)
             {
                 Vector3 activationTickMovement = clientMovementDatas[(activationTick - 1) % BUFFERSIZE].movementInput;
 
                 transform.position = correctPosition;
 
-                Vector3 calculatedMovement = new Vector3(activationTickMovement.x, 0, activationTickMovement.y) * playerSpeed * Time.deltaTime;
-                transform.position += calculatedMovement;
+                transform.position += CalculateMovement(activationTickMovement);
 
                 clientMovementDatas[activationTick % BUFFERSIZE].position = correctPosition;
                 activationTick++;
