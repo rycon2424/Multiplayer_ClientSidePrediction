@@ -56,13 +56,15 @@ Now lets set up all the variables in the player movement script. <br>
         private float tickTime;
 
         // Client Specific
-        [SerializeField] private Vector2 movement;
+        [SerializeField] Vector2 movement;
 
         // Server Specific (When the movementspeed is higher than this value needs to be higher too)
-        private float maxPositionError = 0.5f;
+        [SerializeField] float maxPositionError = 0.5f;
         private int tickRate = 60;
         private const int BUFFERSIZE = 1024;
 ```
+<br>
+
 
 ## Applying server side reconciliation using x
 tell us
