@@ -155,6 +155,8 @@ Each tick we be doing 2 things:
             // Here we will implement the reconciliation later
         {
 ```
+<br>
+Now that we are done with the clients side of data. We now need to make the server actually do something with this info.
 
 ## Applying server side reconciliation using x
 tell us
