@@ -10,7 +10,7 @@ Using this package from Unity makes developing multiplayer in general way easier
 ## Don't spam Rpcs in the update loop
 We're currently sending tick information to the server every tick, but we could optimize it by only transmitting when there's a change in position.
 
-Then, on the server side, we can verify if the player hasn't moved since the last transmission and fill in the gap between the last received tick and the new one by using the new tick's position, given that the player hasn't moved in the till this point.
+Then, on the server side, we can verify if the player hasn't moved since the last transmission and fill in the gap between the last received tick and the new one by using the new tick's position, given that the player hasn't moved till this point.
 
 ## Optimize the Rpc's by caching
 The server can also cache the "lastMovementData" of the clients instead of the clients sending it themselves. This setup would make it truly anti cheat.
