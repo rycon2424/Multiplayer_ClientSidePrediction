@@ -8,16 +8,15 @@ Using this package from Unity makes developing multiplayer in general way easier
 ![multiplay](images/multiplay.PNG?raw=true)
 
 ## Don't spam Rpcs in the update loop
-tell us
+We're currently sending tick information to the server every tick, but we could optimize it by only transmitting when there's a change in position.
+
+Then, on the server side, we can verify if the player hasn't moved since the last transmission and fill in the gap between the last received tick and the new one by using the new tick's position, given that the player hasn't moved in the till this point.
 
 ## Optimize the Rpc's by caching
-The server can also cache the "lastMovementData" of the clients instead of the clients sending it themselves. This setup would also make it even more anti cheat.
-
-## Check if (movement) value has changed before sending
-tell us
+The server can also cache the "lastMovementData" of the clients instead of the clients sending it themselves. This setup would make it truly anti cheat.
 
 ## Unity's client anticipation support (Netcode for Gameobject **only**)
-tell us
+Another interesting approach would be using the "AnticipatedNetworkVariable" that Netcode for Gameobjects has build in. By calling their various Anticipate methods, you can set a visual value that differs from the server value and then react to updates from the server in different ways. <br> <br> But keep in mind this is only a feature in Netcode for Gameobject
 
 ## More Tips? <br>
 Feel free to e-mail me at: boskoivkovic.developer@gmail.com
