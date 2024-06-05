@@ -277,6 +277,10 @@ If it's bigger than the "maxPositionError" we have set, it will teleport back fo
 
 *Here you can see the demonstration*
 ![Finalcode](images/final_code.gif?raw=true)
+<br> <br>
+*Here you can see it applied in my project. <br>
+As you can see the movement does not look delayed anymore*
+![InProject](images/predicition_project.gif?raw=true)
 
 # Next Part: Tips and Optimization
 [Part 4: Tips and Optimization](Part_4.md)  <br>
