@@ -34,7 +34,7 @@ When you move with the arrow keys you will notice that it takes a second before 
 In addition to the effects of latency, gameplay experience in a multiplayer game is also affected by the server's tick rate and the client's update rate. Low tick and update rates reduce game responsiveness and add to perceived latency for users.
 
 For example on the default settings using my tool: https://boskodeveloper.github.io/
-You can see that changing the servers "Updates per second" increases the smoothness significantly.
+You can see that changing the server's "Updates per second" increases the smoothness significantly.
 ![testimage](images/tick_update_rate.gif?raw=true)
 
 
@@ -52,23 +52,23 @@ Update rate is a measure of how frequently the client sends and receives data to
 When handling an online action for example shooting a bullet, the safest and most anti cheat way of doing it would look like this:
 - 1 Client asks the server if he can shoot a bullet
 - 2 Server checks if the client has a bullet in his magazine, if so. Tell the client he may shoot.
-- 3 The client shoots and all others clients see him shooting a bullet. 
+- 3 The client shoots and all other clients see him shooting a bullet. 
 <br> <br>
 *Visual example of a **Server Authorative** messaging system.* <br> <br>
 ![ServerAuthorative](images/server_authorative.png?raw=true)
 <br>
-However the problem here is that the delay between when the client presses shoot and the actual shot is dependend on the network latency (ping in ms) of the client. When it is 25ms it's unnoticeable, but when you have 100ms or higher, the game will perform all your actions delayed causing the feedback from all actions to feel weird and not satisfying.
+However, the problem here is that the delay between when the client presses shoot and the actual shot is dependent on the network latency (ping in ms) of the client. When it is 25ms it's unnoticeable, but when you have 100ms or higher, the game will perform all your actions delayed causing the feedback from all actions to feel weird and not satisfying.
 
 ### Client authoritive
-This version of messaging is never used since it can cause the client to send whatever he wants to other clients without there being someone to overlook if the client was allowed to do that action.
-This makes cheating very easy. Imagine if you can just send "Im shooting" to everyone and no one checking if it was actually possible. That is very exploitative.
+This version of messaging is never used since it can cause the client to send whatever he wants to other clients without there being someone to overlook if the client is allowed to do that action.
+This makes cheating very easy. Imagine if you could just send "I’m shooting" to everyone and no one checking if it was actually possible. That is very exploitative.
 
 *Visual example of a **Client Authorative** messaging system.*
 ![ClientAuthorative](images/client_authorativeV2.png?raw=true)
 
 ## Client-side prediction and Server reconciliation explained
 ### Client-side prediction
-When client-side prediction is implemented and a player performs an action (for example; moving their character, shooting a weapon), the input is immediately processed by the client. This means the client updates the game state locally based on the player's input without waiting for the server's response.
+When client-side prediction is implemented and a player performs an action (for example; moving their character or shooting a weapon), the input is immediately processed by the client. This means the client updates the game state locally based on the player's input without waiting for the server's response.
 
 ### Server reconciliation
 Server reconciliation is on a very simple level checking if a client was allowed to ever perform an action. If yes then the server sends the client an approval check. But if the server got an action requested that was not possible for the client (for example; shooting a bullet while the magazine is empty, or moving while the clients character was blocked). Then the server will reconciliate that action, for the shooting example one way to reconciliate it is by making the bullet not do damage (since it was never supposed to spawn in the first place). For the movement the reconciliation would be to teleport the client back to his last position were he was allowed to be from the server.
