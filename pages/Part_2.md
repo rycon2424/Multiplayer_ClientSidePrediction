@@ -7,7 +7,7 @@ Understanding client-prediction and server reconciliation is crucial in multipla
 
 ### Improved Player Experience
 - **Reduced Latency:** Client-prediction provides immediate responses to inputs, reducing perceived lag and making the game feel more responsive.
-- **Smooth Gameplay:** Server reconciliation corrects discrepancies between client predictions and server-confirmed states, ensuring consistent gameplay.
+- **Smooth Gameplay:** Server reconciliation corrects inconsistencies between client predictions and server-confirmed states, ensuring consistent gameplay.
 
 ### Consistency and Fairness
 - **Accurate State Synchronization:** Ensures all players have a consistent view of the game world, maintaining fair gameplay.
