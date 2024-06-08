@@ -47,18 +47,8 @@ Currently, I am working on a game where the problem has risen again. I have stuf
 <br> <br>
 I am definitely not the only game developer with this problem. That is why I have decided to make this tutorial.
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
 ## What is client-prediction and server reconciliation?
-Client Prediction is like guessing what will happen next in a game based on what you're doing. <br>
+Client Prediction is like guessing what will happen next in a game based on what you're doing. <br> <br>
 Server Reconciliation is like double-checking those guesses to make sure everyone is seeing the same thing in the game. <br>
 *In part 2 we will dive deeper in those two topics.*
 
