@@ -74,13 +74,7 @@ This makes cheating very easy. Imagine if you could just send "I’m shooting" t
 ## Client-side prediction and Server reconciliation explained
 ### Client-side prediction
 When client-side prediction is implemented and a player performs an action (for example; moving their character or shooting a weapon), the input is immediately processed by the client. This means the client updates the game state locally based on the player's input without waiting for the server's response.
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
 ### Server reconciliation
 Server reconciliation is on a very simple level checking if a client was allowed to ever perform an action. If yes then the server sends the client an approval check. But if the server got an action requested that was not possible for the client (for example; shooting a bullet while the magazine is empty, or moving while the clients character was blocked). Then the server will reconciliate that action, for the shooting example one way to reconciliate it is by making the bullet not do damage (since it was never supposed to spawn in the first place). For the movement the reconciliation would be to teleport the client back to his last position were he was allowed to be from the server.
 
