@@ -47,6 +47,15 @@ Currently, I am working on a game where the problem has risen again. I have stuf
 <br> <br>
 I am definitely not the only game developer with this problem. That is why I have decided to make this tutorial.
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 
 ## What is client-prediction and server reconciliation?
 Client Prediction is like guessing what will happen next in a game based on what you're doing. <br>
