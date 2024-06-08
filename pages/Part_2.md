@@ -15,6 +15,11 @@ Understanding client-prediction and server reconciliation is crucial in multipla
 
 ### Cheat Prevention
 - **Server Authority:** Keeps the server as the authoritative entity, preventing client-side manipulation and cheating.
+<br>
+I am going to explain in depth how latency works and what Client-Side prediction and server reconciliation means.
+I collected most of these explanations from this web blog about client-side prediction with physics and Unity it's explanation in these following links: <br>
+- https://codersblock.org/posts/unity-client-side-prediction/ <br>
+- https://docs-multiplayer.unity3d.com/netcode/current/learn/lagandpacketloss/ <br>
 
 ## Understanding latency
 Multiplayer games operating over the internet have to manage adverse network factors that don't affect single-player or LAN-only multiplayer games, most notably network latency. Latency (also known as lag) is the delay between a user taking an action and seeing the expected result. When latency is too high, a game feels unresponsive and slow.
